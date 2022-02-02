@@ -25,4 +25,5 @@ GET
 2. List of all VPCs within a specific region: /v1/aws/vpcs
  - pass "region" with proper value(eg:ap-south-1) in in query param.
 3. List of all Subnets within a specific VPC: /v1/aws/subnets
- - pass "vpcId" with proper vpc ID in in query param.
+ - pass "region" with proper region in in query param.
+ - pass "vpcId" (corrosponding to the region) with proper vpc ID in query param.
