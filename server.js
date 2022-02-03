@@ -16,7 +16,7 @@ const options = {
     definition: {
         openapi: '3.0.3',
         info: {
-            title: "AWS Application",
+            title: "AWS Details",
             description: "A tool to fetch the AWS available regions, VPCs and subnets",
             version: "1.0.0",
             contact: {
