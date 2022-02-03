@@ -6,7 +6,7 @@ npm install
 touch .env
 ```
 Add PORT and AWS_SDK_LOAD_CONFIG with its value in the .env file created above.
-In this example we have used he following in .env:
+In this example we have used the following in .env:
 ```
 PORT=3000
 AWS_SDK_LOAD_CONFIG=true
