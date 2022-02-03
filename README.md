@@ -5,7 +5,12 @@
 npm install
 touch .env
 ```
-Add PORT with its value in the .env file created above.
+Add PORT and AWS_SDK_LOAD_CONFIG with its value in the .env file created above.
+In this example we have used he following in .env:
+```
+PORT=3000
+AWS_SDK_LOAD_CONFIG=true
+```
 
 ### To run the server use: 
 ```
@@ -13,7 +18,7 @@ nodemon server.js
 ```
 
 ## Swagger URL
-The link for swagger documentation is : 
+The link for swagger documentation is : (The port's value should be same as mentioned in .env file)
 ```
 http://localhost:3000/v1/aws-api-docs/
 ```
@@ -27,3 +32,5 @@ GET
 3. List of all Subnets within a specific VPC: /v1/aws/subnets
  - pass "region" with proper region in in query param.
  - pass "vpcId" (corrosponding to the region) with proper vpc ID in query param.
+
+## NOTE: This code has been tested using an IAM user profile which does not have MFA enabled.
