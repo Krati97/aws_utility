@@ -1,8 +1,15 @@
+process.env.AWS_SDK_LOAD_CONFIG=true; 
 import AWS from "aws-sdk";
 
-AWS.config.update({ region: "ap-south-1" });
+//Load region from config file
+let defaultRegion 
+if(process.env.AWS_SDK_LOAD_CONFIG) {
+   defaultRegion = AWS.config.region;
+}
 
-let ec2 = new AWS.EC2({ apiVersion: "2022-02-01" });
+AWS.config.update({ region: defaultRegion });
+
+const ec2 = new AWS.EC2({ apiVersion: "2022-02-01" });
 
 //Function to get the list of all available AWS regions
 export const describeRegions = (req, res) => {

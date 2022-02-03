@@ -1,6 +1,12 @@
-import AWS from "aws-sdk";
+process.env.AWS_SDK_LOAD_CONFIG=true; import AWS from "aws-sdk";
 import { SUBNET_FILTER_VALUE } from "../constants/constants.js";
-AWS.config.update({ region: "ap-south-1" });
+
+//Load region from config file
+let defaultRegion 
+if(process.env.AWS_SDK_LOAD_CONFIG) {
+   defaultRegion = AWS.config.region;
+}
+AWS.config.update({ region: defaultRegion });
 
 let ec2 = new AWS.EC2({ apiVersion: "2022-02-01" });
 
